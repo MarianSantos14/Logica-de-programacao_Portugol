@@ -66,7 +66,7 @@ O programa possui um menu principal e várias funcionalidades acessadas por meio
 
 ## 🛠️ Como executar
 
-1. Baixe e instale o **[Portugol Studio](https://portugolstudio.com.br/)**.
+1. Baixe e instale o **[Portugol Studio](https://univali-lite.github.io/Portugol-Studio/)**.
 2. Abra o programa.
 3. Copie o código do arquivo `.txt` deste projeto.
 4. Clique em **Executar** ▶️.
@@ -84,7 +84,8 @@ Este projeto representa parte do meu progresso.
 ## 📂 Estrutura do projeto
 
 ```plaintext
-logica-de-programacao_Portugol/
-├── projeto-portugol.txt
+Portugol_logica-de-programacao/
+├── img/
+│   └── menu-principal.png
+├── projeto-portugol.alg
 ├── README.md
->>>>>>> 1a66e1eb3c431c085a38ba89c00f7f3bbb93f212
