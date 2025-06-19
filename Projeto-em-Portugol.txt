@@ -1,0 +1,720 @@
+programa
+{
+	inclua biblioteca Texto --> t
+	inclua biblioteca Util --> u
+	inclua biblioteca Matematica --> m
+
+	funcao inicio()
+	{
+		inteiro op1
+		
+		faca
+		{
+			limpa()
+			escreva("=========================")
+			escreva("\n******MenuPrincipal******")
+			escreva("\n=========================")
+			
+			//1) Mostrar as opções  
+			escreva("\n[1] Cálculos")
+			escreva("\n[2] Entrevista")
+			escreva("\n[3] Comparar números")
+			escreva("\n[4] Par ou ímpar")
+			escreva("\n[5] Sucessor e antecessor")
+			escreva("\n[6] Parar")
+			escreva("\n=========================")
+
+			//2) receber a escolha do Usuário
+			escreva("\nDigite sua opção: ")
+			leia(op1)
+			
+			//3) Decidir e fazer o que foi escolhido
+			escolha (op1){
+				caso 1: 
+					calculos()
+					pare
+				caso 2:
+					entrevista() 
+					pare
+				caso 3:
+					compararNumeros()
+					pare
+				caso 4:
+					parImpar()
+					pare
+				caso 5:
+					sucessorAntecessor()
+					pare
+				caso 6:
+					pare
+				caso contrario:
+					escreva("\n*** Opção Inválida ***")
+					u.aguarde(2000)
+					pare
+			}
+		} enquanto(op1 != 6)
+	}
+
+	funcao calculos()
+	{
+		inteiro op2
+		
+		faca
+		{
+			limpa()
+			escreva("===================")
+			escreva("\n*****Cálculos:*****")
+			escreva("\n===================")
+			
+			//1) Mostrar as opções  
+			escreva("\n[1] Tabuada do 1 ao 10")
+			escreva("\n[2] Tabuada de um número específico")
+			escreva("\n[3] Calculadora")
+			escreva("\n[4] As 4 operções")
+			escreva("\n[5] Qual é minha média de notas")
+			escreva("\n[6] Voltar")
+			escreva("\n=====================")
+
+			//2) receber a escolha do Usuário
+			escreva("\nDigite sua opção: ")
+			leia(op2)
+			
+			//3) Decidir e fazer o que foi escolhido
+			escolha (op2){
+				caso 1: 
+					tabuada() //pronta
+					pare
+				caso 2:
+					tabuada1() //pronta
+					pare
+				caso 3:
+					calculadora()
+					pare
+				caso 4:
+					op4()
+					pare
+				caso 5:
+					notaMedia()
+					pare
+				caso 6:
+					pare
+				caso contrario:
+					escreva("\n*** Opção Inválida ***")
+					u.aguarde(2000)
+					pare
+
+			}
+		}enquanto(op2!=6)
+	}
+	
+		funcao tabuada()
+		{
+			inteiro numero, multiplicador, resultado
+			logico repetir = verdadeiro // Variável para controlar o loop
+	
+			enquanto (repetir)
+			{
+				limpa()
+				
+				// Títulos 1-5
+				para (numero = 1; numero <= 5; numero++)
+				{
+					
+					escreva("Tabuada do ", numero, "\t")
+				}
+				escreva("\n")
+				 
+				// Tabuadas 1-5
+				para (multiplicador = 1; multiplicador <= 10; multiplicador++)
+				{
+					para (numero = 1; numero <= 5; numero++)
+					{
+						resultado = numero * multiplicador
+						escreva(numero, " x ", multiplicador, " = ", resultado, "\t")
+					}
+					escreva("\n")
+				}
+
+				escreva("\n")
+				// Títulos 6-10
+				para (numero = 6; numero <= 10; numero++)
+				{
+					escreva("Tabuada do ", numero, "\t")
+				}
+				escreva("\n")
+				
+				// Tabuadas 6-10
+				para (multiplicador = 1; multiplicador <= 10; multiplicador++)
+				{
+					para (numero = 6; numero <= 10; numero++)
+					{
+						resultado = numero * multiplicador
+						escreva(numero, " x ", multiplicador, " = ", resultado, "\t")
+					}
+					escreva("\n")
+				}
+				
+				repetir = continua()
+			}
+		}
+	
+		funcao tabuada1()
+		{
+			limpa()
+			
+			inteiro numero, multiplicador, resultado
+			logico repetir = verdadeiro // Variável para controlar o loop
+	
+			enquanto (repetir)
+			{
+				limpa()
+				
+				escreva("Digite o número para gerar a tabuada: ")
+				leia(numero)
+				
+				escreva("\nTabuada do ", numero, ":\n")
+				
+				para (multiplicador = 1; multiplicador <= 10; multiplicador++)
+				{
+					resultado = numero * multiplicador
+					escreva(numero, " x ", multiplicador, " = ", resultado, "\n")
+				}
+				repetir = continua()
+			}
+		}
+	
+		funcao calculadora()
+		{
+			inteiro op3
+			
+			faca
+			{
+				limpa()
+		
+				escreva("===================")
+				escreva("\nQUAL VOCÊ DESEJA?:")
+				escreva("\n===================")
+		
+				escreva("\n[1] Somar")
+				escreva("\n[2] Subtrair")
+				escreva("\n[3] Multiplicar")
+				escreva("\n[4] Dividir")
+				escreva("\n[5] Voltar")
+				escreva("\n=====================")
+		
+					escreva("\nDigite sua opção: ")
+					leia(op3)
+		
+				escolha (op3){
+						caso 1: 
+							Soma()
+							pare
+						caso 2:
+							Sub()
+							pare
+						caso 3:
+							Mult()
+							pare
+						caso 4:
+							Div()
+							pare
+						caso 5:
+							pare
+						caso contrario:
+							escreva("\n*** Opção Inválida ***")
+							u.aguarde(2000)
+							pare
+					}
+			}enquanto(op3!=5)
+		}
+	
+			funcao Soma()
+			{
+				logico repetir = verdadeiro // Variável para controlar o loop
+		
+				enquanto (repetir)
+				{
+					limpa()
+					
+					inteiro n1, n2
+					
+					escreva("Informe o 1° valor: ")
+					leia(n1)
+					escreva("Informe o 2° valor: ")
+					leia(n2)
+			
+						escreva("\n   " + n1 + " + " + n2 + " = ")
+						escreva(n1+n2)
+		
+				repetir = continua()
+				}
+			}
+		
+			funcao Sub()
+			{
+				logico repetir = verdadeiro // Variável para controlar o loop
+		
+				enquanto (repetir)
+				{
+					limpa()
+					
+					inteiro n1, n2
+		
+					escreva("Informe o 1° valor: ")
+					leia(n1)
+					escreva("Informe o 2° valor: ")
+					leia(n2)
+			
+						escreva("\n   " + n1 + " - " + n2 + " = ")
+						escreva(n1-n2)
+						
+					repetir = continua()
+				}
+			}
+		
+			funcao Mult()
+			{
+		
+				inteiro n1, n2
+				cadeia continuar
+				logico repetir = verdadeiro // Variável para controlar o loop
+		
+				enquanto (repetir)
+				{
+					limpa()
+		
+					escreva("Informe o 1° valor: ")
+					leia(n1)
+					escreva("Informe o 2° valor: ")
+					leia(n2)
+			
+						escreva("\n   " + n1 + " * " + n2 + " = ")
+						escreva(n1*n2)
+		
+				repetir = continua()
+				}
+				
+		
+			}
+		
+			funcao Div()
+		{
+			real n1, n2
+			logico repetir = verdadeiro // Variável para controlar o loop
+	
+			enquanto (repetir)
+			{
+				limpa()
+				
+				escreva("Informe o 1° valor: ")
+				leia(n1)
+				escreva("Informe o 2° valor: ")
+				leia(n2)
+		
+					escreva("\n   " + n1 + " / " + n2 + " = ")
+					escreva(n1/n2)
+	
+			repetir = continua()
+			}
+			
+	
+		}
+
+		funcao op4()
+		{
+			real div, arr, n1, n2
+			logico repetir = verdadeiro // Variável para controlar o loop
+	
+			enquanto (repetir)
+			{
+				limpa()
+				
+				escreva("Informe o 1° valor: ")
+				leia(n1)
+				escreva("Informe o 2° valor: ")
+				leia(n2)
+	
+				escreva("\nResultados:\n\n")
+				
+				//soma
+					escreva("   " + n1 + " + " + n2 + " = ")
+					escreva(n1+n2)
+				//subtração
+					escreva("\n   " + n1 + " - " + n2 + " = ")
+					escreva(n1-n2)
+				//multiplicação
+					escreva("\n   " + n1 + " * " + n2 + " = ")
+					escreva(n1*n2)
+				//divisão
+					escreva("\n   " + n1 + " / " + n2 + " = ")
+					escreva(n1/n2)
+					//div = n1/n2
+					//arr = m.arredondar(div, 2)
+					//escreva(arr)
+				//arrumar arrudondar
+				
+			repetir = continua()
+			}
+			
+	
+		}
+
+		funcao notaMedia()
+		{
+			logico repetir = verdadeiro // Variável para controlar o loop
+			real n1, n2, n3, n4, nota, notaFinal
+			
+			enquanto (repetir)
+			{
+				limpa()
+			
+				escreva("Digite a primeira nota[1/10]: ")
+				leia(n1)
+				
+				escreva("Digite a segunda nota[1/10]: ")
+				leia(n2)
+				
+				escreva("Digite a terceira nota[1/10]: ")
+				leia(n3)
+				
+				escreva("Digite a quarta nota[1/10]: ")
+				leia(n4)
+				
+				nota = (n1+n2+n3+n4) / 4
+				notaFinal = m.arredondar(nota, 2)
+				
+					se (notaFinal<=5) {
+						escreva("\nSua nota I, com " + notaFinal + " pontos\n")
+					}
+					senao se (notaFinal>5 e notaFinal<=7.5) {
+						escreva("\nSua nota R, com " + notaFinal + " pontos\n")
+					}
+					senao se (notaFinal>7.5 e notaFinal<=9) {
+						escreva("\nSua nota B, com " + notaFinal + " pontos\n")
+					}
+					senao se (notaFinal<9 e notaFinal<=10) {
+						escreva("\nSua nota B, com " + notaFinal + " pontos\n")
+					}
+					senao{
+						escreva("\n*****Inválido*****\n")
+					}
+					
+				repetir = continua()
+			}
+		}
+
+	funcao entrevista()
+	{
+		cadeia nome, endereco, estuda="" , ondeestuda= "", vResp = "", trabalha="", comoqtrabalha="", filhos=""
+		inteiro qtdfilhos=0, anoAtual, mesAtual, anoNascimento, mesNascimento, idade
+		logico repetir = verdadeiro // Variável para controlar o loop
+	
+		enquanto (repetir)
+			{
+			faca
+			{
+				limpa()
+	
+				escreva("\n=============")
+				escreva("\n ENTREVISTA:")
+				escreva("\n=============")
+	
+			//nome
+				escreva("\n\nBom dia, qual é o seu nome? ")
+				leia(nome)
+			//end nome
+	
+			//onde mora
+				escreva("\nOnde você mora[cidade]? ")
+				leia(endereco)
+			//end mora 
+				
+			//estuda
+		          escreva("\nVocê estuda?[s/n]: ")
+		          leia(estuda)
+			          se(t.caixa_baixa(estuda) == "s"
+			          ou t.caixa_baixa(estuda) == "ss"
+			          ou t.caixa_baixa(estuda) == "sim")
+			          {
+			         		escreva("Onde você estuda? ")
+			         		leia(ondeestuda)
+			          }
+			          senao
+		          {
+		          	
+		          }
+			//end estuda
+	
+			//trabalha
+				escreva("\nVocê trabalha?[s/n]: ")
+				leia(trabalha)
+					se(t.caixa_baixa(trabalha) == "s"
+					ou t.caixa_baixa(trabalha) == "ss"
+					ou t.caixa_baixa(trabalha) == "sim")
+			          {
+			         		escreva("Com oque você trabalha? ")
+			         		leia(comoqtrabalha)
+			          }
+			          senao
+		          {
+		          	
+		          }
+		     //end trabalha
+	
+			//filhos
+				escreva("\nVocê tem filhos?[s/n]: ")
+				leia(filhos)
+					se(t.caixa_baixa(filhos) == "s"
+					ou t.caixa_baixa(filhos) == "ss"
+					ou t.caixa_baixa(filhos) == "sim")
+				{
+					escreva("Quantos? ")
+					leia(qtdfilhos)
+				}
+					senao
+				{
+				
+				}
+			//end filhos
+		          
+			//quantos anos tem
+				escreva("\nQual é o ano atual? ")
+				leia(anoAtual)
+				escreva("\nE o mês atual? ")
+				leia(mesAtual)
+				escreva("\nQual seu ano de nascimento? ")
+				leia(anoNascimento)
+				escreva("\nE o mês de nascimento? ")
+				leia(mesNascimento)
+				
+				// Calcula a idade inicial
+				idade = anoAtual - anoNascimento
+				
+				// Verifica se o mês de nascimento ainda não chegou
+				se (mesAtual < mesNascimento)
+				{
+				  idade = idade - 1
+				}
+			//end anos
+				
+				limpa()
+		          
+			//Resultado da entrevista
+				escreva("\n========================")
+				escreva("\nRESULTADO DA ENTREVISTA: ")
+				escreva("\n========================")
+				escreva("\n\nSeu nome é ", nome, ".")
+				escreva("\nVocê tem ", idade, " anos.")
+				escreva("\nVocê mora em/na ", endereco, ".")
+	
+			//estuda ou nn
+				se(t.caixa_baixa(estuda) == "s"
+				ou t.caixa_baixa(estuda) == "ss"
+				ou t.caixa_baixa(estuda) == "sim")
+		          {
+		         		escreva("\nVocê estuda em/na ", ondeestuda, ".")
+		          }
+		          senao
+		          {
+		          	escreva("\nVocê não estuda.")
+		          }
+		     //end estuda ou nn
+		          
+			//trabalha ou nn
+				se(t.caixa_baixa(trabalha) == "s"
+				ou t.caixa_baixa(trabalha) == "ss"
+				ou t.caixa_baixa(trabalha) == "sim")
+		          {
+		         		escreva("\nVocê trabalha com ", comoqtrabalha, ".")
+		          }
+		          senao
+		          {
+		          	escreva("\nVocê não trabalha.")
+		          }
+		     //end trabalha ou nn
+	
+	
+			//quantidade de filhos
+				se(t.caixa_baixa(filhos) == "s"
+				ou t.caixa_baixa(filhos) == "ss"
+				ou t.caixa_baixa(filhos) == "sim")
+		          {
+		         		escreva("\nVocê tem ", qtdfilhos, " filhos.")
+		          }
+		          senao
+		          {
+		          	escreva("\nVocê não tem filhos.")
+		          }
+			//end qtd de filhos
+			
+			}enquanto(t.caixa_baixa(vResp) == "s" ou t.caixa_baixa(vResp) == "sim")
+			// Verificar se o usuário quer continuar
+			repetir = continua()
+		}
+	}
+
+	
+	funcao compararNumeros()
+	{
+		inteiro op4
+	
+		faca
+		{
+			limpa()
+		
+			//1) Mostrar as opções  
+			escreva("=====================")
+			escreva("\nMaior ou Menor?")
+			escreva("\n=====================")
+		
+			escreva("\n[1] Maior")
+			escreva("\n[2] Menor")
+			escreva("\n[3] Voltar")
+			escreva("\n=====================")
+		
+				//2) receber a escolha do Usuário
+				escreva("\nDigite sua opção: ")
+				leia(op4)
+					
+				//3) Decidir e fazer o que foi escolhido
+			escolha (op4){
+				caso 1: 
+					maior()
+					pare
+				caso 2:
+					menor()
+					pare
+				caso 3:
+					pare
+				caso contrario:
+					escreva("\n*** Opção Inválida ***")
+					u.aguarde(2000)
+					pare
+			}
+		}enquanto(op4!=3)
+	}
+
+		funcao menor()
+		{
+			logico repetir = verdadeiro // Variável para controlar o loop
+			
+			enquanto (repetir)
+			{
+				limpa()
+	
+				inteiro n1, n2
+				
+				escreva("Digite o primiro número: ")
+				leia(n1)
+				escreva("Digite o segundo número: ")
+				leia(n2)
+		
+				escreva("\nComparação:\n")
+				se(n1>n2){
+					escreva("  " + n2 + " é menor que " + n1)
+				}
+				senao se(n2>n1){
+					escreva("  " + n1 + " é menor que " + n2)
+				}
+				senao {
+					escreva("  Os números são iguais!!")
+				}
+				
+				repetir = continua()
+			}
+		}
+		
+		funcao maior()
+		{
+			logico repetir = verdadeiro // Variável para controlar o loop
+			
+			enquanto (repetir)
+			{
+				limpa()
+				
+				cadeia continuar
+				inteiro n1, n2
+				escreva("Digite o primiro número: ")
+				leia(n1)
+				escreva("Digite o segundo número: ")
+				leia(n2)
+		
+				escreva("\nComparação:\n")
+				se(n1>n2){
+					escreva("  " + n1 + " é maior que " + n2)
+				}
+				senao se(n2>n1){
+					escreva("  " + n2 + " é maior que " + n1)
+				}
+				senao {
+					escreva("  Os números são iguais!!")
+				}
+					
+				repetir = continua()
+			}
+		}
+
+
+	funcao parImpar() 
+	{
+		inteiro npi
+		logico repetir = verdadeiro // Variável para controlar o loop
+		
+		enquanto (repetir)
+		{
+			limpa()
+			
+			escreva("\nDigite um número: ")
+			leia(npi)
+			
+			se(npi % 2 == 1){
+			escreva("\n   O " + npi + " é um número ímpar\n")
+			}
+			senao{
+			escreva("\n   O " + npi + " é um número par\n")
+			}
+			
+			// Verificar se o usuário quer continuar
+			repetir = continua()
+		}
+	}
+
+	
+	funcao sucessorAntecessor()
+	{
+		inteiro n, antecessor, sucessor
+		logico repetir = verdadeiro // Variável para controlar o loop
+		
+		enquanto (repetir)
+		{
+			limpa()
+			
+			escreva("\nInforme um número: ")
+			leia(n)
+			
+			antecessor = n - 1
+			sucessor = n + 1
+			
+			escreva("\n   O antecessor de " + n + " é: " + antecessor)
+			escreva("\n   O sucessor de " + n + " é: " + sucessor + "\n")
+			
+			repetir = continua()
+		}
+	}
+
+
+	funcao logico continua()
+	{
+		cadeia resp
+		logico continua = falso 
+		
+		escreva("\n\nDeseja continuar?[s/n]: ")
+		leia(resp)
+	
+		se (resp == "sim" ou resp == "ss" ou resp == "s")
+		{
+		   continua = verdadeiro
+		}
+		retorne continua
+	}
+}
