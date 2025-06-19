@@ -9,7 +9,7 @@
 
 ## 📷 Imagem do projeto
 
-![Exemplo do Menu](imagens/menu-principal.png) <!-- Altere o caminho se a imagem estiver em outra pasta -->
+![Exemplo do Menu](img/menu-principal.png) <!-- Altere o caminho se a imagem estiver em outra pasta -->
 
 ---
 
