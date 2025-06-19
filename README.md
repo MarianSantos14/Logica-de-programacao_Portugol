@@ -69,7 +69,7 @@ O programa possui um menu principal e várias funcionalidades acessadas por meio
 1. Baixe e instale o **[Portugol Studio](https://univali-lite.github.io/Portugol-Studio/)**.
 2. Abra o programa.
 3. Copie o código do arquivo `.txt` deste projeto.
-4. Clique em **Executar** ▶️.
+4. Clique em **Executar** (▶️).
 
 ---
 
